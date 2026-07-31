@@ -87,6 +87,7 @@ p{
 <body>
 
 <div class="carta">
+
 <h1>Para Ti ❤️</h1>
 
 <p>
@@ -95,9 +96,8 @@ Cada palabra será un recuerdo que podrá leer siempre que quiera.
 </p>
 
 <p>
-Gracias por existir, por hacer mis días más bonitos.
-  Gracias por existir y por haber coincidido conmigo en este inmenso mundo. 
-  A veces pienso que las casualidades más bonitas son las que nunca esperamos.
+Gracias por existir y por haber coincidido conmigo en este inmenso mundo.
+A veces pienso que las casualidades más bonitas son las que nunca esperamos.
 Espero que esta pequeña carta saque una sonrisa de tu rostro.
 </p>
 
@@ -112,85 +112,35 @@ Tu nombre
 
 </div>
 
+
 <script>
+
 function crearCorazon(){
+
     const corazon=document.createElement("div");
+
     corazon.classList.add("corazon");
+
     corazon.innerHTML="❤";
+
     corazon.style.left=Math.random()*100+"vw";
+
     corazon.style.fontSize=(20+Math.random()*25)+"px";
+
     corazon.style.animationDuration=(5+Math.random()*5)+"s";
+
     document.body.appendChild(corazon);
+
 
     setTimeout(()=>{
         corazon.remove();
     },9000);
+
 }
 
 setInterval(crearCorazon,300);
+
 </script>
 
-<body>
-
-<div id="sobre" onclick="abrirCarta()">
-    <div class="tapa"></div>
-    <div class="base"></div>
-    <div class="texto">💌 Ábreme 💌</div>
-</div>
-
-<div class="carta" id="carta" style="display:none;">
-    <!-- Aquí deja el contenido de tu carta exactamente como ya lo tienes -->
-</div>
-
-<script>
-function abrirCarta(){
-    document.querySelector(".tapa").style.transform="rotateX(180deg)";
-
-    setTimeout(()=>{
-        document.getElementById("sobre").style.display="none";
-        document.getElementById("carta").style.display="block";
-    },1200);
-}
-</script>
-
-<style>
-#sobre{
-    width:320px;
-    height:220px;
-    position:relative;
-    cursor:pointer;
-}
-
-.base{
-    position:absolute;
-    width:100%;
-    height:100%;
-    background:#ff5c8d;
-    border-radius:10px;
-}
-
-.tapa{
-    position:absolute;
-    width:0;
-    height:0;
-    border-left:160px solid transparent;
-    border-right:160px solid transparent;
-    border-top:110px solid #ff8fab;
-    transform-origin:top;
-    transition:1s;
-    z-index:2;
-}
-
-.texto{
-    position:absolute;
-    width:100%;
-    top:140px;
-    text-align:center;
-    font-size:24px;
-    color:white;
-    z-index:3;
-    font-weight:bold;
-}
-</style>
+</body>
 </html>
-
