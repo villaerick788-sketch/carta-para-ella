@@ -130,6 +130,67 @@ function crearCorazon(){
 setInterval(crearCorazon,300);
 </script>
 
-</body>
+<body>
+
+<div id="sobre" onclick="abrirCarta()">
+    <div class="tapa"></div>
+    <div class="base"></div>
+    <div class="texto">💌 Ábreme 💌</div>
+</div>
+
+<div class="carta" id="carta" style="display:none;">
+    <!-- Aquí deja el contenido de tu carta exactamente como ya lo tienes -->
+</div>
+
+<script>
+function abrirCarta(){
+    document.querySelector(".tapa").style.transform="rotateX(180deg)";
+
+    setTimeout(()=>{
+        document.getElementById("sobre").style.display="none";
+        document.getElementById("carta").style.display="block";
+    },1200);
+}
+</script>
+
+<style>
+#sobre{
+    width:320px;
+    height:220px;
+    position:relative;
+    cursor:pointer;
+}
+
+.base{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:#ff5c8d;
+    border-radius:10px;
+}
+
+.tapa{
+    position:absolute;
+    width:0;
+    height:0;
+    border-left:160px solid transparent;
+    border-right:160px solid transparent;
+    border-top:110px solid #ff8fab;
+    transform-origin:top;
+    transition:1s;
+    z-index:2;
+}
+
+.texto{
+    position:absolute;
+    width:100%;
+    top:140px;
+    text-align:center;
+    font-size:24px;
+    color:white;
+    z-index:3;
+    font-weight:bold;
+}
+</style>
 </html>
 
